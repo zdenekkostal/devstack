@@ -18,9 +18,9 @@
   },
   "devDependencies": {
     "autoprefixer-loader": "1.1.0",
-    "babel-core": "^4.7.0",
-    "babel-loader": "^4.2.0",
-    "babel-runtime": "^4.6.0",
+    "babel-core": "^5.1.13",
+    "babel-loader": "^5.0.0",
+    "babel-runtime": "^5.1.13",
     "browserslist": "0.2.0",
     "caniuse-db": "1.0.30000060",
     "chai": "^2.1.1",
