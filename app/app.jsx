@@ -1,5 +1,6 @@
 require('./styles/app');
 
+import React from 'react';
 import Button from './components/button';
 
 React.render(

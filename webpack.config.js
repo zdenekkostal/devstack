@@ -66,10 +66,6 @@ module.exports = function getWebpackConfig() {
             }
         },
 
-        plugins: [
-            new webpack.ProvidePlugin({
-                React: 'react'
-            })
-        ]
+        plugins: []
     };
 };
