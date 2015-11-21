@@ -1,17 +1,18 @@
 var _ = require('lodash');
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var getWebpackConfig = require('./webpack.config.js');
 
 var devConfig = _.assign(getWebpackConfig(), {
     devtool: 'inline-source-map',
 
     output: {
-        path: path.join(__dirname, '/app/'),
+        path: path.join(__dirname, '/'),
 
         // Specify complete path to force
         // chrome/FF load the images
-        publicPath: 'http://localhost:3000/app/',
+        publicPath: 'http://localhost:3000/',
         filename: '[name].js'
     }
 });
@@ -35,7 +36,10 @@ devConfig.plugins = devConfig.plugins.concat(
     new webpack.DefinePlugin({
         DEBUG: true
     }),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new HtmlWebpackPlugin({
+        template: 'index.webpack.html'
+    })
 );
 
 module.exports = devConfig;

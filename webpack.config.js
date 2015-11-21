@@ -13,13 +13,13 @@ module.exports = function getWebpackConfig() {
             loaders: [
                 {
                     test: /\.js$/,
-                    loader: 'babel-loader',
+                    loader: 'babel-loader?stage=0',
                     exclude: /node_modules/
                 },
 
                 {
                     test: /\.jsx$/,
-                    loader: 'babel-loader',
+                    loader: 'babel-loader?stage=0',
                     exclude: /node_modules/
                 },
 

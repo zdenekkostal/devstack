@@ -48,8 +48,9 @@ buildConfig.plugins = buildConfig.plugins.concat(
 
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(uglifyOptions),
+
     new HtmlWebpackPlugin({
-        template: 'index.build.html'
+        template: 'index.webpack.html'
     }),
 
     function() {
