@@ -1,0 +1,9 @@
+@custom-media --small-viewport (max-width: 30em);
+
+button {
+    padding: 30px;
+
+    @media (--small-viewport) {
+        padding: 10px;
+    }
+}

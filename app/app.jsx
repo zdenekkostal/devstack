@@ -2,7 +2,7 @@ import './styles/app';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './components/button';
+import Button from './components/button/button.jsx';
 
 ReactDOM.render(
     <Button value="Hello world" />,

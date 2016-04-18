@@ -23,18 +23,8 @@ module.exports = function getWebpackConfig() {
                 },
 
                 {
-                    test: /\.styl$/,
-                    loader: 'style!css?sourceMap!autoprefixer!stylus'
-                },
-
-                {
-                    test: /\.scss$/,
-                    loader: 'style!css?sourceMap!autoprefixer!sass'
-                },
-
-                {
                     test: /\.css$/,
-                    loader: 'style!css?sourceMap!autoprefixer'
+                    loader: 'style!css?sourceMap!postcss'
                 },
 
                 // https://msdn.microsoft.com/en-us/library/cc848897(v=vs.85).aspx
@@ -50,9 +40,19 @@ module.exports = function getWebpackConfig() {
             ]
         },
 
+        postcss: function () {
+            return [
+                require('postcss-import')({ addDependencyTo: webpack }),
+                require('postcss-url')(),
+                require('postcss-cssnext')(),
+                require('postcss-browser-reporter')(),
+                require('postcss-reporter')(),
+            ]
+        },
+
         resolve: {
             // Allow to omit extensions when requiring these files
-            extensions: ['', '.js', '.jsx', '.styl', '.scss'],
+            extensions: ['', '.js', '.jsx', '.css'],
             modulesDirectories: ['node_modules'],
 
             alias: {
