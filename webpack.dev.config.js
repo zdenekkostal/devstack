@@ -5,7 +5,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var getWebpackConfig = require('./webpack.config.js');
 
 var devConfig = _.assign(getWebpackConfig(), {
-    devtool: 'inline-source-map',
+    devtool: 'cheap-inline-source-map',
 
     output: {
         path: path.join(__dirname, '/'),
