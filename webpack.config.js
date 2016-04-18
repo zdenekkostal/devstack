@@ -59,7 +59,7 @@ module.exports = function getWebpackConfig() {
         resolve: {
             // Allow to omit extensions when requiring these files
             extensions: ['', '.js', '.jsx', '.styl', '.scss'],
-            modulesDirectories: ['node_modules', 'bower_components'],
+            modulesDirectories: ['node_modules'],
 
             alias: {
                 react: path.join(__dirname, 'node_modules/react/')
