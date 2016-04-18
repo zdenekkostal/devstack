@@ -1,7 +1,5 @@
-import React from 'react/addons';
-var TestUtils = React.addons.TestUtils;
-
-var Button = require('./button.jsx');
+import ReactTestUtils from 'react-addons-test-utils';
+import Button from './button';
 
 describe('Button', function() {
     it('should render passed value', function() {

@@ -1,11 +1,3 @@
 import React from 'react';
 
-export default React.createClass({
-    render: function() {
-        return (
-            <button>
-                {this.props.value}
-            </button>
-        );
-    }
-})
+export default ({ value }) => <button>{value}</button>;

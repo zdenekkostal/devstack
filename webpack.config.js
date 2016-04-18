@@ -2,6 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = function getWebpackConfig() {
+    var babelOptions = JSON.stringify({
+        presets: ['stage-0', 'es2015', 'react'],
+        plugins: ['transform-runtime', 'transform-proto-to-assign']
+    });
+
     return {
         entry: {
             app: ['./app/app']
@@ -12,15 +17,9 @@ module.exports = function getWebpackConfig() {
         module: {
             loaders: [
                 {
-                    test: /\.js$/,
-                    loader: 'babel-loader?stage=0',
-                    exclude: /node_modules/
-                },
-
-                {
-                    test: /\.jsx$/,
-                    loader: 'babel-loader?stage=0',
-                    exclude: /node_modules/
+                    test: /\.jsx?$/,
+                    loader: 'babel?' + babelOptions,
+                    exclude: /node_modules/,
                 },
 
                 {
@@ -40,18 +39,13 @@ module.exports = function getWebpackConfig() {
 
                 // https://msdn.microsoft.com/en-us/library/cc848897(v=vs.85).aspx
                 {
-                    test: /\.(png|svg)$/,
-                    loader: 'url-loader?limit=32768&mimetype=image/png'
+                    test: /\.png$/,
+                    loader: 'url?limit=32768&mimetype=image/png'
                 },
 
                 {
-                    test: /\.jpg$/,
-                    loader: 'file-loader'
-                },
-
-                {
-                    test: /\.(eot|woff|ttf|svg)/,
-                    loader: 'file-loader'
+                    test: /\.(jpe?g|eot|woff|ttf|svg)/,
+                    loader: 'file'
                 }
             ]
         },
@@ -62,7 +56,6 @@ module.exports = function getWebpackConfig() {
             modulesDirectories: ['node_modules'],
 
             alias: {
-                react: path.join(__dirname, 'node_modules/react/')
             }
         },
 

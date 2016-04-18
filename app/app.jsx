@@ -1,9 +1,10 @@
-require('./styles/app');
+import './styles/app';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Button from './components/button';
 
-React.render(
+ReactDOM.render(
     <Button value="Hello world" />,
     document.getElementById('app')
 );
