@@ -1,4 +1,6 @@
 import React from 'react';
-import './button.css';
+import styles from './button.css';
 
-export default ({ value }) => <button>{value}</button>;
+export default ({ value }) => (
+    <button className={styles.button}>{value}</button>
+);
