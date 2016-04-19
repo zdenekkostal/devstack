@@ -20,11 +20,11 @@ var devConfig = _.assign(getWebpackConfig(), {
 _.keysIn(devConfig.entry).forEach(function(key) {
     var currentValue = devConfig.entry[key];
 
-    devConfig.entry[key] = currentValue.concat(
+    devConfig.entry[key] = [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch'
-    );
+    ].concat(currentValue);
 });
 
 devConfig.plugins = devConfig.plugins.concat(
