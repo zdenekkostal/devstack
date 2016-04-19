@@ -1,6 +1,6 @@
 @custom-media --small-viewport (max-width: 30em);
 
-.button {
+:local(.button) {
     padding: 30px;
 
     @media (--small-viewport) {

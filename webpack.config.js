@@ -45,7 +45,6 @@ module.exports = function getWebpackConfig() {
                 require('postcss-import')({ addDependencyTo: webpack }),
                 require('postcss-url')(),
                 require('postcss-cssnext')(),
-                require('postcss-local-scope')(),
                 require('postcss-browser-reporter')(),
                 require('postcss-reporter')(),
             ]
