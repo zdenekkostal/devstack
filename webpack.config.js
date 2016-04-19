@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = function getWebpackConfig() {
     var babelOptions = JSON.stringify({
         presets: ['stage-0', 'es2015', 'react'],
-        plugins: ['transform-runtime', 'transform-proto-to-assign']
+        plugins: ['transform-runtime', 'transform-proto-to-assign', 'react-hot-loader/babel']
     });
 
     return {

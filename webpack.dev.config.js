@@ -22,14 +22,9 @@ _.keysIn(devConfig.entry).forEach(function(key) {
 
     devConfig.entry[key] = currentValue.concat(
         'webpack-dev-server/client?http://localhost:3000',
-        'webpack/hot/only-dev-server'
+        'webpack/hot/only-dev-server',
+        'react-hot-loader/patch'
     );
-});
-
-devConfig.module.loaders.forEach(function(loaderDef) {
-    if (loaderDef.test.toString().indexOf('.js') > 0) {
-        loaderDef.loader = 'react-hot!' + loaderDef.loader;
-    }
 });
 
 devConfig.plugins = devConfig.plugins.concat(
