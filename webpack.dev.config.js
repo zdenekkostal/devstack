@@ -21,7 +21,7 @@ _.keysIn(devConfig.entry).forEach(function(key) {
     var currentValue = devConfig.entry[key];
 
     devConfig.entry[key] = [
-        'webpack-dev-server/client?http://localhost:3000',
+        'webpack-dev-server/client?' + devConfig.output.publicPath,
         'webpack/hot/only-dev-server',
         'react-hot-loader/patch'
     ].concat(currentValue);
